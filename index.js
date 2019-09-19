@@ -10,6 +10,6 @@ app.set('views', path.join(__dirname, 'views'))
 // app.get('/', function(request, response){
 //   response.sendFile('calculator.html')
 // });
-app.set('view engine', 'ejs')
-app.get('/', (req, res) => res.render('pages/index'))
+app.set('view engine', 'html')
+app.get('/', (req, res) => res.render('pages/calculator'))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
