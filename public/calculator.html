@@ -4,32 +4,46 @@
     <meta charset="utf-8">
     <title>CourSys - Formula Tester</title>
     <link rel="stylesheet" href="/stylesheets/calculator.css">
+    <script src="/js/calculator.js" defer></script>
     <style>
+      html,body{
+        height: 100%
+      }
+      .container {
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
       body {
         background-color: #A6192E;
         margin-top: 0%;
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 0%;
+        margin-right: 0;
+        padding-bottom: 5%;
       }
       #rectangle {
         background-color: #E9EFF1;
+        margin-top: 2%;
         padding: 2%;
         width: 75%;
+        height: 84%;
       }
       table, th, td{
         border: 1px solid black;
       }
       #box {
           background-color: white;
+          padding: 2%;
+          height: 90%
       }
       #outer {
         background-color: black;
-        padding-block-end: 3%;
-        padding-block-start: 3%;
+        padding-top: 2%;
+        width: 90%;
+        height: 85%;
       }
       td {
-        padding: 3%;
-        width: 33%;
         text-align: left;
       }
       th {
@@ -40,6 +54,8 @@
         border-collapse: collapse;
         table-layout: fixed;
         width: 100%;
+        height: 70%;
+        margin-bottom: 3%;
       }
       #top {
         background-color: grey
@@ -59,6 +75,9 @@
       h1 {
         margin: 0%;
       }
+      h2 {
+        margin: 0%;
+      }
 
 
 
@@ -68,86 +87,88 @@
   </head>
 
   <body>
-
-    <div id = "outer">
-        <div id = "box">
-            <h1>Grade Calculator</h1>
-            <div id="rectangle">
-              <h2>Activities</h2>
-              <p>Give grades to the numeric activites</p>
-              <table>
-                <tr id = "top">
-                  <th>Name</th>
-                  <th>Short Name</th>
-                  <th>Weight</th>
-                  <th>Grade</th>
-                  <th>Percent
-                  </th>
-                </tr>
-                <tr>
-                  <td>Activity 1</td>
-                  <td>A1</td>
-                  <td><input type="text"></td>
-                  <td><input type="text"> /
-                    <input type="text">
-                  </td>
-                  <td>
-                    <output>
-                    </output>
-                  </td>
-                </tr>
-                <tr>
-                    <td>Activity 2</td>
-                    <td>A2</td>
-                    <td><input type="text"></td>
-                    <td><input type="text"> /
-                      <input type="text">
-                    </td>
-                    <td>
-                      <output>
-                      </output>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Activity 3</td>
-                    <td>A3</td>
-                    <td><input type="text"></td>
-                    <td><input type="text"> /
-                      <input type="text">
-                    </td>
-                    <td>
-                      <output></output>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Activity 4</td>
-                    <td>A4</td>
-                    <td><input type="text"></td>
-                    <td><input type="text"> /
-                      <input type="text">
-                    </td>
-                    <td>
-                      <output></output>
-                    </td>
-                </tr>
-              </table>
-
-              <h2>Result </h2>
-              <output></output>
-              <div id="button box">
-                  <button class="button">Weighted</button>
-                  <div class = "divider"></div>
-                  <button class="button">Mean</button>
-              </div>
-
-              </div>
-
+    <div class = "container">
+        <div id = "outer">
+            <div id = "box">
+                <h1>Grade Calculator</h1>
+                <div id="rectangle">
+                  <h2>Activities</h2>
+                  <p>Give grades to the numeric activites</p>
+                  <form method="GET" id="grades"></form>
+                  <table id = "table">
+                    <tr id = "top">
+                      <th>Name</th>
+                      <th>Short Name</th>
+                      <th>Weight</th>
+                      <th>Grade</th>
+                      <th>Percent
+                      </th>
+                    </tr>
+                    <tr>
+                      <td>Activity 1</td>
+                      <td>A1</td>
+                      <td><input type="text" id = "a1w" name = "a1w" form = "grades"></td>
+                      <td><input type="text" id = "a1n" name = "a1n" form = "grades"> /
+                        <input type="text" id = "a1d" name = "a1d" form = "grades">
+                      </td>
+                      <td>
+                        <p id = a1grade></p>
+                      </td>
+                    </tr>
+                    <tr>
+                        <td>Activity 2</td>
+                        <td>A2</td>
+                        <td><input type="text" id = "a2w" name = "a2w" form = "grades"></td>
+                        <td><input type="text" id = "a2n" name = "a2n" form = "grades"> /
+                          <input type="text" id = "a2d" name = "a2d" form = "grades">
+                        </td>
+                        <td>
+                          <p id = a2grade></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Activity 3</td>
+                        <td>A3</td>
+                        <td><input type="text" id = "a3w" name = "a3w" form = "grades"></td>
+                        <td><input type="text" id = "a3n" name = "a3n" form = "grades"> /
+                          <input type="text" id = "a3d" name = "a3d" form = "grades">
+                        </td>
+                        <td>
+                          <p id = a3grade></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Activity 4</td>
+                        <td>A4</td>
+                        <td><input type="text" id = "a4w" name = "a4w" form = "grades"></td>
+                        <td><input type="text" id = "a4n" name = "a4n" form = "grades"> /
+                          <input type="text" id = "a4d" name = "a4d" form = "grades">
+                        </td>
+                        <td>
+                          <p id = a4grade></p>
+                        </td>
+                    </tr>
+                  </table>
+    
+                  <h2>Result </h2>
+                  <p id = "result"></p>
+    
+                  <div id="button box">
+                      <button id="weight" class="button">Weighted</button>
+                      <div class = "divider"></div>
+                      <button id="mean" class="button">Mean</button>
+                  </div>
+    
+                  </div>
+    
+                </div>
+    
             </div>
-
+    
         </div>
-
+    
     </div>
-
+    
 
 
 
