@@ -1,51 +1,69 @@
-// var b = document.getElementById("weight");
-// b.onclick = function(){
-//     document
-// }
-
 document.getElementById("weight").addEventListener('click', function(){
-    // document.getElementById("para").innerHTML = "FIRST PARAGRAPH!!";
     console.log(document.querySelector("input[name = 'a1w']").value);
 });
 
 document.addEventListener('keyup', function(){
     var x = document.getElementById("a1n").value;
     var y = document.getElementById("a1d").value;
-    var result = getGradeTotal(x, y)
-    if (!isNaN(result)) {
-        document.getElementById("a1grade").innerHTML = result;
+
+    if (isNaN(x) || isNaN(y)) {
+        document.getElementById("a1grade").innerHTML = "";
+    } else {
+        var result = getGradeTotal(x, y)
+        if (!isNaN(result)) {
+            document.getElementById("a1grade").innerHTML = result;
+        } else {
+            document.getElementById("a1grade").innerHTML = "";
+        }
     }
-    
 });
 
 document.addEventListener('keyup', function(){
     var x = document.getElementById("a2n").value;
     var y = document.getElementById("a2d").value;
-    var result = getGradeTotal(x, y)
-    if (!isNaN(result)) {
-        document.getElementById("a2grade").innerHTML = result;
+
+    if (isNaN(x) || isNaN(y)) {
+        document.getElementById("a2grade").innerHTML = "";
+    }  else {
+        var result = getGradeTotal(x, y)
+        if (!isNaN(result)) {
+            document.getElementById("a2grade").innerHTML = result;
+        } else {
+            document.getElementById("a2grade").innerHTML = "";
+        }
     }
-    
 });
 
 document.addEventListener('keyup', function(){
     var x = document.getElementById("a3n").value;
     var y = document.getElementById("a3d").value;
-    var result = getGradeTotal(x, y)
-    if (!isNaN(result)) {
-        document.getElementById("a3grade").innerHTML = result;
+
+    if (isNaN(x) || isNaN(y)) {
+        document.getElementById("a3grade").innerHTML = "";
+    }  else {
+        var result = getGradeTotal(x, y)
+        if (!isNaN(result)) {
+            document.getElementById("a3grade").innerHTML = result;
+        } else {
+            document.getElementById("a3grade").innerHTML = "";
+        }
     }
-    
 });
 
 document.addEventListener('keyup', function(){
     var x = document.getElementById("a4n").value;
     var y = document.getElementById("a4d").value;
-    var result = getGradeTotal(x, y)
-    if (!isNaN(result)) {
-        document.getElementById("a4grade").innerHTML = result;
+
+    if (isNaN(x) || isNaN(y)) {
+        document.getElementById("a4grade").innerHTML = "";
+    }  else {
+        var result = getGradeTotal(x, y)
+        if (!isNaN(result)) {
+            document.getElementById("a4grade").innerHTML = result;
+        } else {
+            document.getElementById("a4grade").innerHTML = "";
+        }
     }
-    
 });
 
 document.getElementById("mean").addEventListener('click', function(){
@@ -104,7 +122,69 @@ function getWeighted() {
     // var denominator = parseFloat(w1) + parseFloat(w2) + parseFloat(w3) + parseFloat(w4);
     // var result =  numerator/denominator;
     // return result; 
-
 }
+
+document.getElementById("addrow").addEventListener('click', function() {
+    var tableRef = document.getElementById('table');
+    var newRow = tableRef.insertRow();
+    var number = tableRef.rows.length - 1;
+
+    var cell0 = newRow.insertCell(0);
+    var newText0  = document.createTextNode('Activity ' + number);
+    cell0.appendChild(newText0);
+
+    var cell1 = newRow.insertCell(1);
+    var newText1  = document.createTextNode('A' + number);
+    cell1.appendChild(newText1);
+
+    var cell2 = newRow.insertCell(2);
+    var newWeight = document.createElement("INPUT");
+    newWeight.setAttribute("type", "text");
+    cell2.appendChild(newWeight);
+
+    var cell3 = newRow.insertCell(3);
+    var newN = document.createElement("INPUT");
+    newN.setAttribute("type", "text");
+    cell3.appendChild(newN);
+    var newText3  = document.createTextNode('/');
+    cell3.appendChild(newText3);
+    var newD = document.createElement("INPUT");
+    newD.setAttribute("type", "text");
+    cell3.appendChild(newD);
+
+    var cell4 = newRow.insertCell(4);
+    var newText4  = document.createTextNode("");
+    cell4.appendChild(newText4);
+});
+
+document.getElementById("findTarget").addEventListener('click', function() {
+    // Required = (Goal − CurrentGrade × (100% − Remaining Weight)) / Remaining Weight
+    var goal = document.getElementById("target").value;
+    if (!isNaN(goal)) {
+        goal = goal / 100;
+        var currentGrade = getMean() / 100;
+        var weightTotal = 0;
+        for(var i = 1; i < table.rows.length; i++) {
+            var wi = parseFloat(document.getElementById("a" + i + "w").value);
+            if (!isNaN(wi)) {
+                weightTotal = weightTotal + (wi / 100);
+            }
+        }
+        if (weightTotal <= 100 && weightTotal >= 0 ) {
+            var remainingWeight = 1 - weightTotal;
+            // var required = (goal - (currentGrade * weightTotal)) / remainingWeight;
+            var currentGrade = getWeighted() / 100;
+            var required = (goal - (currentGrade*weightTotal)) / remainingWeight * 100;
+            document.getElementById("targetresult").innerHTML = required.toFixed(3);
+        } else {
+            document.getElementById("targetresult").innerHTML = "";
+        }
+    } else {
+        document.getElementById("targetresult").innerHTML = "";
+    }
+    
+});
+
+
 
 

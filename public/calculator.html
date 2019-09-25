@@ -20,7 +20,7 @@
                     <tr id = "top">
                       <th>Name</th>
                       <th>Short Name</th>
-                      <th>Weight</th>
+                      <th>Weight (%)</th>
                       <th>Grade</th>
                       <th>Percent
                       </th>
@@ -70,20 +70,38 @@
                         </td>
                     </tr>
                   </table>
-    
-                  <h3>Result </h3>
-                  <p id = "result"></p>
-    
-                  <div id="button box">
-                      <button id="weight" class="button">Weighted</button>
-                      <div class = "divider"></div>
-                      <button id="mean" class="button">Mean</button>
+
+                  <div id = additionalGrade>
+                    Find additional grade needed to get
+                    average grade of
+                    <input type="text" id = "target"> :
+                    <p id= "targetresult"></p>
                   </div>
+                  <button id="findTarget" class="button">Go</button>
+                  
+
+                  <h3>Result </h3>
+
+                  <div id = "button_result">
+                      <p id = "result"></p>
+    
+                      <div id="buttonbox">
+                          <button id="weight" class="button">Weighted</button>
+                          <div class = "divider"></div>
+                          <button id="mean" class="button">Mean</button>
+                      </div>
+                  </div>
+
+                  <div>
+                    <button id="addrow" class="button">Add Row</button>
+                  </div>
+
     
                   </div>
     
                 </div>
-    
+                
+
             </div>
     
         </div>

@@ -22,7 +22,7 @@ body {
   height: 84%;
 }
 table, th, td{
-  border: 1px solid black;
+  border: 1px solid #8f938b;
 }
 #box {
     background-color: white;
@@ -30,7 +30,7 @@ table, th, td{
     height: 88%
 }
 #outer {
-  background-color: black;
+  background-color: #3d3935;
   padding-top: 2%;
   width: 90%;
   height: 87%;
@@ -50,7 +50,7 @@ table {
   margin-bottom: 2%;
 }
 #top {
-  background-color: grey
+  background-color: #d3d4d3
 }
 .button {
   background-color: #A6192E;
@@ -74,3 +74,23 @@ h2 {
 h3 {
   margin: 0%;
 }
+#buttonbox{
+  float: right;
+}
+#button_result{
+  display: flex;
+  justify-content: space-between;  
+  margin-top: 2%;
+}
+#additionalGrade{
+  display: inline-block;
+}
+#targetresult{
+  margin: 0%;
+  display: inline-block;
+}
+#findTarget{
+  display: inline-block;
+  float: right;
+}
+
