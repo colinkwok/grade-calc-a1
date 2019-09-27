@@ -42,7 +42,10 @@ td {
 }
 th {
   text-align: left;
-  /* height: 25px; */
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+
 }
 td {
   padding-top: 1%;
@@ -79,16 +82,20 @@ h1 {
 }
 h2 {
   margin: 0%;
+  font: bold 100% Cambria,Georgia,"Times New Roman",Times,serif;
+  color: #A6192E;
+  font-size: 18px;
 }
 h3 {
   margin-top: 0.5%;
   margin-bottom: 0%;
   padding: 0%;
+  font: bold 100% Cambria,Georgia,"Times New Roman",Times,serif;
+  color: #A6192E;
 }
 #buttonbox{
   float: right;
   margin: 0%;
-  padding: 0%;
 }
 #button_result{
   display: flex;
@@ -110,6 +117,8 @@ input {
 #findTarget{
   display: inline-block;
   float: right;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
 }
 #target {
   padding: 1%;
@@ -118,11 +127,30 @@ input {
 }
 #additionalGrade {
   width: 90%;
+  font:normal 100% Cambria,Georgia,"Times New Roman",Times,serif;
 }
 #result {
   margin-top: 0.5%;
   padding-left: 1%;
   padding-bottom: 0%;
   margin-bottom: 0%;
+}
+td {
+  font:normal 100% Cambria,Georgia,"Times New Roman",Times,serif;
+}
+p {
+  font:normal 100% Cambria,Georgia,"Times New Roman",Times,serif;
+}
+#addrow{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+}
+#weight{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+}
+#mean{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
 }
 
