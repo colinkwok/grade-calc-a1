@@ -16,7 +16,7 @@ body {
 }
 #rectangle {
   background-color: #E9EFF1;
-  margin-top: 2%;
+  margin-top: 1%;
   padding: 2%;
   width: 75%;
   height: 84%;
@@ -72,8 +72,10 @@ table {
   display:inline-block;
 }
 h1 {
-  margin: 0%;
-  color: #A6192E;
+  margin-top: 3%;
+  color: black;
+  font-family: "Arial", Helvetica, sans-serif;
+  font-weight: normal;
 }
 h2 {
   margin: 0%;
