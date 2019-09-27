@@ -96,6 +96,7 @@ h3 {
 #buttonbox{
   float: right;
   margin: 0%;
+  /* width: 50%; */
 }
 #button_result{
   display: flex;
@@ -148,9 +149,18 @@ p {
 #weight{
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
+  /* width: 20%; */
 }
 #mean{
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
+  /* width: 20%; */
 }
-
+#topPara{
+  margin-bottom: 3%;
+}
+.button {
+  padding-bottom: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
